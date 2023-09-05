@@ -218,8 +218,8 @@ def evaluate(model, data_loader, device, epoch):
 def fit_model(adata, gmt_path, project = None, pre_weights='', label_name='Celltype',max_g=300,max_gs=300, mask_ratio = 0.015,n_unannotated = 1,batch_size=8, embed_dim=48,depth=2,num_heads=4,lr=0.001, epochs= 10, lrf=0.01):
     GLOBAL_SEED = 1
     set_seed(GLOBAL_SEED)
-    device = torch.device(device if torch.cuda.is_available() else "cpu")
     device = 'cuda:1'
+    # device = torch.device(device if torch.cuda.is_available() else "cpu")
     print(device)
     today = time.strftime('%Y%m%d',time.localtime(time.time()))
     #train_weights = os.getcwd()+"/weights%s"%today
